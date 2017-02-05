@@ -1,0 +1,7 @@
+<p (click)="ggg()">Hero Search</p>
+<input #searchBox (keyup)="search(searchBox.value)">
+<ul>
+	<li *ngFor="let hero of heroes | async" (click)="goDetail(hero)">
+		{{hero.name}}
+	</li>
+</ul> 

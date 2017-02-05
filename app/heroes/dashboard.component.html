@@ -1,0 +1,7 @@
+<p>Top Heroes</p>
+<ul>
+	<li *ngFor="let hero of heroes" [routerLink]="['/detail',hero.id]">
+		{{hero.name}}
+	</li>
+</ul>
+<hero-search></hero-search>
