@@ -4,15 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 /*app*/
 import { AppComponent }  from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-/*heroes*/
-
-/*my-header*/
-import { HeaderComponent } from './shared/layout/header.component';
-/*my-sider*/
-import { SiderComponent } from './shared/layout/sider.component';
-
 /*module*/
-import { LoginRoutingModule } from './login/login-routing.module';
+import {SharedModule} from './shared/shared.module';
 /*memoryDB*/
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './heroes/in-memory-data.service';
@@ -24,19 +17,17 @@ import { LoginComponent }       from './login/login.component';
 @NgModule({
   imports:      [ 
       BrowserModule,
-      AppRoutingModule,
-      LoginRoutingModule, 
+      AppRoutingModule, 
+      SharedModule,
       InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   declarations: [ 
       AppComponent,
-      HeaderComponent,
-      SiderComponent,
       LoginComponent
    ],
   providers: [
-    AuthGuard,
-    AuthService
+      AuthGuard,
+      AuthService
   ],
   bootstrap:    [ AppComponent ]
 })

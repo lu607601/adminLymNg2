@@ -1,6 +1,7 @@
 import { Router,
          NavigationExtras } from '@angular/router';
-import { AuthService }      from './auth.service';
+import {UserService} from "../shared/service/user.service";
+import {User} from "../shared/models/user.model";
 import { Component } from '@angular/core';
 @Component({
 	moduleId: module.id,
@@ -9,30 +10,22 @@ import { Component } from '@angular/core';
 	})
 
 export class LoginComponent{
- message: string;
+ model:any = {username:'',password:''};
+ error:string;
 
-  constructor(public authService: AuthService, public router: Router) {
-    this.setMessage();
-  }
-
-  setMessage() {
-    this.message = 'Logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
+  constructor(
+    public router: Router,
+    private userService:UserService) {
   }
 
   login() {
-    this.message = 'Trying to log in ...';
-
-    this.authService.login().subscribe(() => {
-      this.setMessage();
-      if (this.authService.isLoggedIn) {
-        let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/form';
-        let navigationExtras: NavigationExtras = {
-          preserveQueryParams: true,
-          preserveFragment: true
-        };
-        this.router.navigate([redirect], navigationExtras);
-      }
-    });
+    let result = this.userService.getAuth(this.model as User);
+        if(result){
+            this.router.navigate(['/dashboard']);
+        }
+        else {
+            this.error = '账号linweiwei，密码123'
+        }
   }
 
   logout() {
