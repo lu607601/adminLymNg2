@@ -42,7 +42,7 @@ export class UserService{
 
     getAuth(user:User):boolean{
         //此处暂时写死
-        if(user.username=="linweiwei"&&user.password=="123"){
+        if(user.username=="123"&&user.password=="123"){
 
             user.token = 'token-'+ new Date();
             this.setAuth(user);

@@ -8,6 +8,7 @@ export class HeroService {
 	private heroesUrl = 'app/heroes';//URL TO WEB API
 	private headers = new Headers({'Content-type': 'application/json'});
 	constructor(private http:Http){}
+	
 	getHeroes(): Promise<Hero[]> {
        return this.http.get(this.heroesUrl)
              .toPromise()

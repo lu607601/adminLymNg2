@@ -5,7 +5,8 @@ import { LoginComponent }  from './login/login.component';
 
 const routes: Routes = [
     { path:'heroes',loadChildren:'app/heroes/heroes.module#HeroesModule' },
-    { path:'form',loadChildren:'app/form/form.module#FormModule', canLoad: [AuthGuard] },
+    { path:'form',loadChildren:'app/form/form.module#FormModule' },
+    { path:'nofound',loadChildren:'app/nofound/nofound.module#NoFoundModule' },
     { path:'', redirectTo: '/login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent }
 ];

@@ -1,6 +1,11 @@
-<h2>LOGIN</h2>
-<p>{{message}}</p>
-<p>
-  <button (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
-  <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
-</p>
+<div class="container">
+  <form class="form-signin" *ngIf="!authService.isLoggedIn">
+     <label for="inputText" class="sr-only">Email address</label>
+     <input type="text" id="inputText" class="form-control" placeholder="123" required autofocus [(ngModel)]="model.username" name="username">
+     <label for="inputPassword" class="sr-only">Password</label>
+     <input type="password" id="inputPassword" class="form-control" placeholder="123" required [(ngModel)]="model.password" name="password">
+     <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="login()" >Login</button>
+     <h6></h6>
+   </form>
+<!-- <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button> -->
+</div>    

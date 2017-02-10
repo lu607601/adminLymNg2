@@ -1,13 +1,12 @@
 <div>
-  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <form (ngSubmit)="onSubmit()" [formGroup]="form" class="myForm">
 
     <div *ngFor="let question of questions" class="form-row">
       <df-question [question]="question" [form]="form"></df-question>
     </div> 
-     
 
     <div class="form-row">
-      <button type="submit" [disabled]="!form.valid">Save</button>
+      <button type="submit" class="btn btn-primary myFormBtn" [disabled]="!form.valid">Save</button>
     </div>
   </form>
 

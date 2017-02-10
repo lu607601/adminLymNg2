@@ -1,19 +1,19 @@
 .layout-main {
     margin-left: auto;
     margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
 }
 .layout-main:after {
     content: "";
     display: table;
     clear: both;
 }
-.sider {
-	max-width: 20%;
-    float: left;
-}
 .layout-content {
     max-width: 80%;
     float: left;
+}
+/*login*/
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
 }

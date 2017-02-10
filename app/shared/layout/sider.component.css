@@ -1,4 +1,19 @@
+.sider {
+	max-width: 20%;
+    margin-right: 10px;
+    float: left;
+	background-color: #292b2c;
+}
 .sider a.active {
-	background-color: #51585e;
-	border-color: #51585e;
+	background-color: #141618;
+	border-color: #141618;
+}
+.sider .list-group-item {
+	border-left: none;
+	color: #fff;
+	background-color: #292b2c;
+}
+.sider .list-group-item:first-child {
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
 }

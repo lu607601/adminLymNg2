@@ -1,6 +1,7 @@
 import './rxjs-extensions';
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 /*app*/
 import { AppComponent }  from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +20,7 @@ import { LoginComponent }       from './login/login.component';
       BrowserModule,
       AppRoutingModule, 
       SharedModule,
+      FormsModule,
       InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   declarations: [ 
